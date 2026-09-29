@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en-AU">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#064e3b" />
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="icon" href="/assets/logo.png" />
+    <link rel="preload" href="/assets/logo.png" as="image" />
+    <style>
+      .brand-intro{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;overflow:hidden;isolation:isolate;pointer-events:none;animation:intro-done 1.7s both}
+      .brand-intro__half{position:absolute;inset:0 auto 0 0;width:51%;background:#f6f1e8;animation:intro-open-left 1.7s cubic-bezier(.76,0,.18,1) both}
+      .brand-intro__half--right{left:auto;right:0;background:#e7eee4;animation-name:intro-open-right}
+      .brand-intro__content{position:relative;z-index:1;display:grid;justify-items:center;gap:18px;padding:24px;text-align:center;animation:intro-content 1.7s both}
+      .brand-intro__mark{width:clamp(170px,22vw,260px);height:auto;clip-path:inset(0 100% 0 0);animation:intro-mark 1.7s cubic-bezier(.22,1,.36,1) both}
+      .brand-intro__line{width:54px;height:1px;background:#83bd3f;transform:scaleX(0);animation:intro-line 1.7s both}
+      .brand-intro__caption{color:#064e3b;font:500 11px/1.5 Arial,sans-serif;letter-spacing:.18em;text-transform:uppercase;animation:intro-caption 1.7s both}
+      @keyframes intro-mark{0%,10%{clip-path:inset(0 100% 0 0);transform:translateY(12px)}38%,100%{clip-path:inset(0 0 0 0);transform:translateY(0)}}
+      @keyframes intro-line{0%,26%{transform:scaleX(0)}50%,100%{transform:scaleX(1)}}
+      @keyframes intro-caption{0%,33%{opacity:0;transform:translateY(7px)}53%,100%{opacity:1;transform:translateY(0)}}
+      @keyframes intro-content{0%,59%{opacity:1;transform:translateY(0)}76%,100%{opacity:0;transform:translateY(-14px)}}
+      @keyframes intro-open-left{0%,58%{transform:translateX(0);border-radius:0}100%{transform:translateX(-105%);border-radius:0 45% 45% 0}}
+      @keyframes intro-open-right{0%,58%{transform:translateX(0);border-radius:0}100%{transform:translateX(105%);border-radius:45% 0 0 45%}}
+      @keyframes intro-done{0%,99%{visibility:visible}100%{visibility:hidden}}
+      @media(prefers-reduced-motion:reduce){.brand-intro{display:none}}
+    </style>
+    <!--page-head-->
+  </head>
+  <body>
+    <div id="root"><!--app-html--></div>
+    <div class="brand-intro" aria-hidden="true">
+      <div class="brand-intro__half"></div><div class="brand-intro__half brand-intro__half--right"></div>
+      <div class="brand-intro__content"><img class="brand-intro__mark" src="/assets/logo.png" width="878" height="296" alt="" /><span class="brand-intro__line"></span><span class="brand-intro__caption">A little support. A brighter everyday.</span></div>
+    </div>
+    <noscript><p class="noscript-note">You can read every page without JavaScript. Interactive filters and the demonstration enquiry form need JavaScript.</p></noscript>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
